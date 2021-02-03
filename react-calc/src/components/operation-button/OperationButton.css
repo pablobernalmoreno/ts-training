@@ -1,0 +1,9 @@
+.opt__button {
+  font-size: 20px;
+  height: 90%;
+  width: 22%;
+  border-radius: 50%;
+  border: none;
+  background-color: #fab94c;
+  color: white;
+}

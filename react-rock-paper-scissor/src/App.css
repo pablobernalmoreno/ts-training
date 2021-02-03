@@ -1,0 +1,17 @@
+body {
+  text-align: center;
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.instructions {
+  margin: 5rem;
+}
+.gameModes {
+  margin: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

@@ -10,9 +10,6 @@ interface PokeUrl {
 function App() {
   const [pokes, setPokes] = useState<PokeUrl[]>();
   const [pokemon, setPokemon] = useState<string>();
-  const [chosen, setChosen] = useState<string>();
-
-  const url = "https://pokeapi.co/api/v2/pokemon/";
 
   const getPokes = async (): Promise<void> => {
     const res = await axios.get(
@@ -36,16 +33,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hola</h1>
+      <h1>Bienvenido a la PokeApp, por favor elije a tu Pókemon Favorito</h1>
       <form>
-        <input
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            setChosen(e.target.value);
-          }}
-        ></input>
-        <button onClick={(e: React.FormEvent) => getPoke(e, url + chosen)}>
-          Submit
-        </button>
         <select
           onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
             getPoke(e, e.currentTarget.value)
@@ -60,7 +49,12 @@ function App() {
           })}
         </select>
       </form>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <img src={pokemon} />
       </div>
     </div>
